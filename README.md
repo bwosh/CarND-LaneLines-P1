@@ -1,43 +1,37 @@
 # **Finding Lane Lines on the Road** 
 
----
-
-**Finding Lane Lines on the Road**
-
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
+This is simple lane finding algorithm.   
+P1.ipynb is provided to demonstrate the method.
 
 [//]: # (Image References)
 
 [image1]: ./test_images_output/solidWhiteRight.jpg "Sample output"
 
----
-
-### Reflection
+![alt text][image1]
 
 ### 1.  Pipeline description 
 
-My pipeline consisted of 5 steps. 
+Pipeline consisted of 5 steps. 
  - **Gaussian Blur**  
   This method was used to remove compression artifacts and very detailed parts of image
+
  - **Canny edge detection on R,G,B channes separately**  
    Canny edge detection is performed on 3 channels separately and then merged. Doing that instead of grayscale is to contain more edges referring do color details (on grayscale image yellow lane can dissappear in some ighting contions)
+
  - **Two regions of interests (ROIs)**  
    To apply specific lines slopes range spearate processing is done for left and right side of video
+
  - **Detect Hough lines for ROIs**  
    Hough lines are searching for lines after canny edge detection. The found lines are filtered by allowed slope range.
    hough_lines was equipped with new parameter (method to filter the lines is passed)
+
  - **Average and extrapolate hough lines**  
    All lines on left and right are separately averaged and exrapolated to fit corresponding ROI
+
  - **Merge ROI branhces, draw lines, produce output**  
 
-draw_lines method 
 
 The sample output of lane detection looks like below:
-
-![alt text][image1]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
