@@ -1,3 +1,6 @@
+This project is a part of:  
+ [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
 # **Finding Lane Lines on the Road** 
 
 This is simple lane finding algorithm.   
